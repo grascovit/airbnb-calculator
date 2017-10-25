@@ -1,0 +1,9 @@
+<%= form_tag(controller: 'calculator', action: 'create') do %>
+  <%= label_tag(:average_income, 'Average long term rental income per month:') %>
+  <%= text_field_tag(:average_income, params[:average_income], class: 'form-input', id: 'average_income') %>
+
+  <%= label_tag(:address, 'Address:') %>
+  <%= text_field_tag(:address, params[:address], class: 'form-input', id: 'address') %>
+
+  <%= submit_tag('Calculate') %>
+<% end %>
