@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/grascovit/airbnb-calculator.svg?branch=master)](https://travis-ci.org/grascovit/airbnb-calculator)
+[![codecov](https://codecov.io/gh/grascovit/airbnb-calculator/branch/master/graph/badge.svg)](https://codecov.io/gh/grascovit/airbnb-calculator)
+
 # Airbnb Calculator
 
 We want to find out if the location is lucrative for renting the apartment on airbnb comparing to long term renting. Write an application, that will take average long term rental income per month and address. The result should be indication if it's profitable to do Airbnb.
