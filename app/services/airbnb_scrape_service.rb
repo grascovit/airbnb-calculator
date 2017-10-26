@@ -20,6 +20,6 @@ class AirbnbScrapeService
                   .get(AIRBNB_URL, params: @params)
     result = request.parse
 
-    result['data'] ? result['data']['average_income_raw'] : nil
+    result['data'] ? result['data']['average_income_raw'].to_f : nil
   end
 end
