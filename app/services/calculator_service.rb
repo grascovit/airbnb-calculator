@@ -6,12 +6,12 @@ class CalculatorService
 
   def call
     delta = @airbnb_income - @long_term_income
-    percentage = (delta / @long_term_income) * 100
+    percentage = (delta / (@long_term_income.nonzero? || 1)) * 100
 
     {
       airbnb_income: @airbnb_income.round(2),
       percentage: percentage.round(2),
-      delta: delta.round(2),
+      delta: delta.round(2).abs,
       profitable: delta > 0
     }
   end

@@ -26,7 +26,7 @@ RSpec.describe CalculatorService do
         result = {
           airbnb_income: airbnb_income,
           percentage: -16.67,
-          delta: -100.0,
+          delta: 100.0,
           profitable: false
         }
 
