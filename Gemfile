@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.3.4'
 
 gem 'coffee-rails', '~> 4.2'
+gem 'http'
 gem 'jbuilder', '~> 2.5'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.4'
