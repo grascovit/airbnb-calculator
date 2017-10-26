@@ -21,5 +21,7 @@ class AirbnbScrapeService
     result = request.parse
 
     result['data'] ? result['data']['average_income_raw'].to_f : nil
+  rescue HTTP::ConnectionError, JSON::ParserError
+    nil
   end
 end
