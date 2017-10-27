@@ -121,7 +121,7 @@ feature 'Calculator', type: :feature do
         click_button('Calculate')
 
         expect(page).to have_css('p', text: /You could earn an average of \$\d+\.\d+ per month with Airbnb./)
-        expect(page).to have_css('p', text: /You could earn \$\d+\.\d+ \(\d+.\d+%\) more than long term rent./)
+        expect(page).to have_css('p', text: /You would earn \$\d+\.\d+ \(\d+.\d+%\) more than long term rent./)
         expect(page).to have_css('p', text: /It is profitable to do Airbnb./)
       end
     end
@@ -140,7 +140,7 @@ feature 'Calculator', type: :feature do
         click_button('Calculate')
 
         expect(page).to have_css('p', text: /You could earn an average of \$\d+\.\d+ per month with Airbnb./)
-        expect(page).to have_css('p', text: /You could earn \$\d+\.\d+ \(\-\d+.\d+%\) less than long term rent./)
+        expect(page).to have_css('p', text: /You would earn \$\d+\.\d+ \(\-\d+.\d+%\) less than long term rent./)
         expect(page).to have_css('p', text: /It is not profitable to do Airbnb./)
       end
     end
