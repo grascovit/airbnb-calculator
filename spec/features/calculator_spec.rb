@@ -28,7 +28,7 @@ feature 'Calculator', type: :feature do
       expect(page).to have_field('address', with: 'Goiânia - State of Goiás, Brazil')
     end
 
-    skip 'sets the latitude and longitude to the hidden fields', js: true do
+    it 'sets the latitude and longitude to the hidden fields', js: true do
       visit root_path
 
       fill_in 'long_term_income', with: '500'
@@ -39,8 +39,8 @@ feature 'Calculator', type: :feature do
       find('#address').send_keys(:down)      
       find('#address').send_keys(:enter)
 
-      # expect(find('#latitude', visible: false).value).to eq('-16.68689119999999')
-      # expect(find('#longitude', visible: false).value).to eq('-49.264794300000005')
+      expect(page).to have_selector("#latitude[value='-16.68689119999999']", visible: false)
+      expect(page).to have_selector("#longitude[value='-49.264794300000005']", visible: false)
     end
   end
 end
