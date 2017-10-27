@@ -33,5 +33,53 @@ RSpec.describe CalculatorService do
         expect(service.call).to eq(result)
       end
     end
+
+    context 'when airbnb income is zero' do
+      it 'returns the result with no problems' do
+        long_term_income = 100.0
+        airbnb_income = 0.0
+        service = described_class.new(long_term_income, airbnb_income)
+        result = {
+          airbnb_income: airbnb_income,
+          percentage: -100.0,
+          delta: 100.0,
+          profitable: false
+        }
+
+        expect(service.call).to eq(result)
+      end
+    end
+
+    context 'when long term rent is zero' do
+      it 'returns the result with no problems' do
+        long_term_income = 0.0
+        airbnb_income = 100.0
+        service = described_class.new(long_term_income, airbnb_income)
+        result = {
+          airbnb_income: airbnb_income,
+          percentage: 10000.0,
+          delta: 100.0,
+          profitable: true
+        }
+
+        expect(service.call).to eq(result)
+      end
+    end
+
+    context 'when both incomes are zero' do
+      it 'returns the result with no problems' do
+        long_term_income = 0.0
+        airbnb_income = 0.0
+        service = described_class.new(long_term_income, airbnb_income)
+        result = {
+          airbnb_income: airbnb_income,
+          percentage: 0.0,
+          delta: 0.0,
+          profitable: false
+        }
+
+        expect(service.call).to eq(result)
+      end
+    end
   end
 end
