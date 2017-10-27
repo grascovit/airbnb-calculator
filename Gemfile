@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.3.4'
 
 gem 'coffee-rails', '~> 4.2'
+gem 'http'
 gem 'jbuilder', '~> 2.5'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.4'
@@ -13,6 +14,7 @@ gem 'uglifier', '>= 1.3.0'
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara', '~> 2.13'
+  gem 'chromedriver-helper'
   gem 'rspec-rails', '~> 3.5'
   gem 'rubocop', require: false
   gem 'rubocop-rspec'
@@ -28,6 +30,7 @@ end
 
 group :test do
   gem 'codecov', require: false
+  gem 'rails-controller-testing'
   gem 'simplecov', require: false
 end
 
