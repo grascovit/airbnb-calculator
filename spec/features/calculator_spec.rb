@@ -90,6 +90,23 @@ feature 'Calculator', type: :feature do
       expect(page).to have_link('Go back to the calculator', href: '/calculator/new')
     end
 
+    it 'redirects to the calculator page when clicking on back button', js: true do
+      visit root_path
+
+      fill_in 'long_term_income', with: '500'
+      fill_in 'address', with: 'Goiânia'
+
+      expect(page).to have_selector('.pac-item')
+
+      find('#address').send_keys(:down)
+      find('#address').send_keys(:enter)
+      click_button('Calculate')
+
+      click_link('Go back to the calculator')
+
+      expect(page.current_path).to eq('/calculator/new')
+    end
+
     context 'when airbnb is more profitable' do
       it 'displays the desired result data', js: true do
         visit root_path
