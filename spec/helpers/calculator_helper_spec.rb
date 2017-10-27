@@ -20,7 +20,9 @@ RSpec.describe CalculatorHelper, type: :helper do
       it "returns 'is'" do
         expect(helper.profitable_or_not(true)).to eq('is')
       end
+    end
 
+    context 'when profitable param is false' do
       it "returns 'is not'" do
         expect(helper.profitable_or_not(false)).to eq('is not')
       end
