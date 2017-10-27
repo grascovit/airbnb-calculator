@@ -1,6 +1,6 @@
 <%= form_tag('/calculator') do %>
   <%= label_tag(:long_term_income, 'Average long term rental income per month (USD):') %>
-  <%= number_field_tag(:long_term_income, params[:long_term_income], class: 'form-input', required: true) %>
+  <%= number_field_tag(:long_term_income, params[:long_term_income], min: 0, class: 'form-input', required: true) %>
 
   <%= label_tag(:address, 'Address:') %>
   <%= text_field_tag(:address, params[:address], class: 'form-input', required: true) %>
