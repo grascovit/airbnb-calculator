@@ -1,5 +1,14 @@
-<p>You could earn an average of $<%= @result[:airbnb_income] %> per month with Airbnb.</p>
-<p>You would earn $<%= @result[:delta] %> (<%= @result[:percentage] %>%) <%= more_or_less(@result[:profitable]) %> than long term rent.</p>
-<p>It <%= profitable_or_not(@result[:profitable]) %> profitable to do Airbnb.</p>
-
-<%= link_to 'Go back to the calculator', new_calculator_path, data: { turbolinks: false } %>
+<div class="ui middle aligned center aligned grid">
+  <div class="six wide column"> 
+    <div class="ui padded raised segment">
+      <p>You could earn an average of <strong>$<%= @result[:airbnb_income] %></strong> per month with Airbnb.</p>
+      <p>You would earn <strong>$<%= @result[:delta] %></strong> (<%= @result[:percentage] %>%) <%= more_or_less(@result[:profitable]) %> than long term rent.</p>
+      <p>It <strong><%= profitable_or_not(@result[:profitable]) %></strong> profitable to do Airbnb.</p>
+  
+      <%= link_to new_calculator_path, class: 'ui labeled icon teal tiny button', data: { turbolinks: false } do %>
+        <i class="arrow left icon"></i>
+        Go back to the calculator
+      <% end %>
+    </div>
+  </div>
+</div>
