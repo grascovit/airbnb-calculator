@@ -57,7 +57,7 @@ RSpec.describe CalculatorService do
         service = described_class.new(long_term_income, airbnb_income)
         result = {
           airbnb_income: airbnb_income,
-          percentage: 10000.0,
+          percentage: 10_000.0,
           delta: 100.0,
           profitable: true
         }

@@ -1,12 +1,28 @@
-<%= form_tag('/calculator') do %>
-  <%= label_tag(:long_term_income, 'Average long term rental income per month (USD):') %>
-  <%= number_field_tag(:long_term_income, params[:long_term_income], class: 'form-input', required: true) %>
+<div class="ui middle aligned center aligned stackable grid">
+  <div class="five wide column">
+    <h2 class="ui teal header">
+      <div class="content">
+        Airbnb Profit Calculator
+      </div>
+    </h2>
+    <%= form_tag('/calculator', class: 'ui large form') do %>
+      <div class="field">
+        <div class="ui left icon input">
+          <i class="dollar icon"></i>
+          <%= number_field_tag(:long_term_income, params[:long_term_income], min: 0, placeholder: 'Average long term rental income per month (USD)', required: true) %>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui left icon input">
+          <i class="home icon"></i>
+          <%= text_field_tag(:address, params[:address], placeholder: 'Address', required: true) %>
+        </div>
+      </div>
 
-  <%= label_tag(:address, 'Address:') %>
-  <%= text_field_tag(:address, params[:address], class: 'form-input', required: true) %>
+      <%= hidden_field_tag :latitude %>
+      <%= hidden_field_tag :longitude %>
 
-  <%= hidden_field_tag :latitude %>
-  <%= hidden_field_tag :longitude %>
-
-  <%= submit_tag('Calculate') %>
-<% end %>
+      <%= submit_tag('Calculate', class: 'ui fluid large teal submit button') %>
+    <% end %>
+  </div>
+</div>
