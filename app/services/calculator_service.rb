@@ -1,7 +1,7 @@
 class CalculatorService
   def initialize(long_term_income, airbnb_income)
-    @long_term_income = long_term_income
-    @airbnb_income = airbnb_income
+    @long_term_income = long_term_income.to_f
+    @airbnb_income = airbnb_income.to_f
   end
 
   def call

@@ -1,4 +1,19 @@
-.form-input {
-  display: block;
-  width: 400px;
+body > .grid {
+  height: 100%;
+}
+
+.column {
+  margin-top: -4rem;
+}
+
+.ui.teal.header {
+  margin: 2rem 0;
+}
+
+.ui.button {
+  margin: 1.5rem 0;
+}
+
+p {
+  font-size: 1.33em;
 }
