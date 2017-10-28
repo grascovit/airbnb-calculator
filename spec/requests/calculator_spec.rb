@@ -57,5 +57,17 @@ RSpec.describe 'Calculator', type: :request do
         expect(response).to render_template('result')
       end
     end
+
+    context 'when airbnb scrape service fails' do
+      it 'redirects to the calculator page' do
+        airbnb_service = double('AirbnbScrapeService')
+        allow(AirbnbScrapeService).to receive(:new).and_return(airbnb_service)
+        allow(airbnb_service).to receive(:call).and_return(nil)
+
+        post calculator_path, params: {}
+
+        expect(response).to redirect_to(new_calculator_path)
+      end
+    end
   end
 end
